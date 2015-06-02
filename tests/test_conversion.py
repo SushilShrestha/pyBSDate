@@ -24,6 +24,12 @@ class TestDateConversions_BS2AD(unittest.TestCase):
         with self.assertRaises(exceptions.InvalidDate):
             utilities.convert_to_ad(invalid_day)
 
+    def test_invalid_date(self):
+        # no 32 in ashoj 2072
+        invalid_date = "2072-06-32"
+        with self.assertRaises(exceptions.InvalidDate):
+            utilities.convert_to_ad(invalid_date)
+
     def test_date_to_days(self):
         year, month, day = 2072, 04, 10
         total_days = 31 + 32 + 31 + 10-1
@@ -67,6 +73,11 @@ class TestDateConversions_AD2BS(unittest.TestCase):
         invalid_day = "2072-01-33"
         with self.assertRaises(exceptions.InvalidDate):
             utilities.convert_to_bs(invalid_day)
+
+    def test_invalid_date(self):
+        invalid_date = "2016-02-31"
+        with self.assertRaises(exceptions.InvalidDate):
+            utilities.convert_to_bs(invalid_date)
 
     def test_ad_to_bs(self):
         bs_date = "2072-01-10"

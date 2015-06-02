@@ -2,16 +2,18 @@ __author__ = 'sushil'
 import re
 from exceptions import InvalidDateFormat, DateOutOfRange, InvalidDate
 def convert_to_ad(bs_date):
-    well_behaved_date = decompose_date(bs_date)
-    year, month, day = well_behaved_date
+    date_components = decompose_date(bs_date)
+    year, month, day = date_components
+    validate_date_bs(year, month, day)
 
     ad_year, ad_month, ad_day = _bs_to_ad(year, month, day)
     formatted_date = "{}-{:02}-{:02}".format(ad_year, ad_month, ad_day)
     return formatted_date
 
 def convert_to_bs(ad_date):
-    well_behaved_date = decompose_date(ad_date)
-    year, month, day = well_behaved_date
+    date_components = decompose_date(ad_date)
+    year, month, day = date_components
+    validate_date_ad(year, month, day)
 
     bs_year, bs_month, bs_day = _ad_to_bs(year, month, day)
     formatted_date = "{}-{:02}-{:02}".format(bs_year, bs_month, bs_day)
@@ -21,6 +23,23 @@ import json
 DATE_MAP = json.load(open("../datemap.json"))
 AD_MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 AD_MONTH_DAYS_LEAP = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+def validate_date_bs(year, month, day):
+    year_calendar = DATE_MAP.get(str(year))
+    if not year_calendar:
+        return
+    days_in_month = year_calendar['daysonmonth']
+    day_in_month = days_in_month[month-1]
+    if day>day_in_month:
+        raise InvalidDate
+
+def validate_date_ad(year, month, day):
+    days_in_month = AD_MONTH_DAYS
+    if is_leap_year(year):
+        days_in_month = AD_MONTH_DAYS_LEAP
+    day_in_month = days_in_month[month-1]
+    if day>day_in_month:
+        raise InvalidDate
 
 def _bs_to_ad(year, month, day):
     conversion_information = DATE_MAP.get(str(year))
