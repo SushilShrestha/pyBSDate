@@ -1,8 +1,9 @@
 __author__ = 'sushil'
 import unittest
-from pyBSDate import utilities
-from pyBSDate import BSDate
+
+from pyBSDate import BSDate, utilities
 from pyBSDate import exceptions
+
 
 class TestDateConversions_BS2AD(unittest.TestCase):
     def test_wrong_formatting(self):

@@ -1,9 +1,12 @@
 __author__ = 'sushil'
 import re
-from exceptions import InvalidDateFormat, DateOutOfRange, InvalidDate
-
 import json
-DATE_MAP = json.load(open("../datemap.json"))
+import site
+from exceptions import *
+
+base_folder = site.getsitepackages()[0]
+date_map_file = "/".join([base_folder, "pyBSDate/datemap.json"])
+DATE_MAP = json.load(open(date_map_file))
 AD_MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 AD_MONTH_DAYS_LEAP = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
