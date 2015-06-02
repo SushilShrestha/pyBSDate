@@ -3,7 +3,7 @@ import unittest
 from pyBSDate import utilities
 from pyBSDate import exceptions
 
-class TestDateConversions(unittest.TestCase):
+class TestDateConversions_BS2AD(unittest.TestCase):
     def test_wrong_formatting(self):
         wrong_formatted_date = "01-10-2072"
         with self.assertRaises(exceptions.InvalidDateFormat):
@@ -33,7 +33,49 @@ class TestDateConversions(unittest.TestCase):
 
     def test_bs_to_ad(self):
         bs_date = "2072-01-10"
-        ad_date = "2015-03-23"
+        ad_date = "2015-04-23"
 
         converted_date = utilities.convert_to_ad(bs_date)
         self.assertEqual(converted_date, ad_date)
+
+    def test_leap_year_test(self):
+        bs_date = "2072-11-19"
+        ad_date = "2016-03-02"
+
+        converted_date = utilities.convert_to_ad(bs_date)
+        self.assertEqual(converted_date, ad_date)
+
+
+
+class TestDateConversions_AD2BS(unittest.TestCase):
+    def test_wrong_formatting(self):
+        wrong_formatted_date = "01-10-2072"
+        with self.assertRaises(exceptions.InvalidDateFormat):
+            utilities.convert_to_bs(wrong_formatted_date)
+
+    def test_over_the_range_dates(self):
+        over_range_date = "1900-01-10"
+        with self.assertRaises(exceptions.DateOutOfRange):
+            utilities.convert_to_bs(over_range_date)
+
+    def test_invalid_month(self):
+        invalid_month = "2072-18-10"
+        with self.assertRaises(exceptions.InvalidDate):
+            utilities.convert_to_bs(invalid_month)
+
+    def test_invalid_day(self):
+        invalid_day = "2072-01-33"
+        with self.assertRaises(exceptions.InvalidDate):
+            utilities.convert_to_bs(invalid_day)
+
+    def test_ad_to_bs(self):
+        bs_date = "2072-01-10"
+        ad_date = "2015-04-23"
+
+        converted_date = utilities.convert_to_bs(ad_date)
+        self.assertEqual(converted_date, bs_date)
+
+        # print _ad_to_bs(2015, 06, 2), "2072-02-19"
+        # print _ad_to_bs(2016, 06, 2), "2072-02-20"
+        # print _ad_to_bs(2016, 01, 2), "2072-09-18"
+        # print _ad_to_bs(2016, 01, 20), "2072-10-06"
