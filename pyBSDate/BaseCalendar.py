@@ -17,10 +17,7 @@ class BaseCalendar(object):
         except ValueError:
             raise ValueError("Invalid Date")
 
-        if self.month>12 or self.month<1:
-            raise ValueError("Invalid Date")
-        if self.day>32 or self.day<1:
-            raise ValueError("Invalid Date")
+        self.validate_date()
 
     def add_delta(self, numDays):
         days_in_month = self.get_days_in_month(self.year, self.month)
@@ -78,6 +75,16 @@ class BaseCalendar(object):
 
     def get_month_days_in_year(self, year):
         raise NotImplementedError
+
+    def validate_date(self):
+        if self.month>12 or self.month<1:
+            raise ValueError("Invalid Date")
+        if self.day<1:
+            raise ValueError("Invalid Date")
+
+        days_in_month = self.get_days_in_month(self.year, self.month)
+        if self.day>days_in_month:
+            raise ValueError("Invalid Date")
 
     def get_previous_month_days(self, year, month):
         month -= 1
