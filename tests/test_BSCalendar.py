@@ -10,7 +10,7 @@ class TestBSCalendar(unittest.TestCase):
             BSCalendar(2007,2,3).get_month_days_in_year("1968")
             BSCalendar(2045,2,1).get_month_days_in_year("2100")
 
-        self.assertEqual(BSCalendar(1,1,1).get_month_days_in_year("2087"),
+        self.assertEqual(BSCalendar(2087,1,1).get_month_days_in_year("2087"),
                          [31, 31, 32, 31, 31, 31, 30, 30, 29, 30, 30, 30])
 
     def test_count_year_days(self):
