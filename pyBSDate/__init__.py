@@ -13,7 +13,7 @@ def convert_BS_to_AD(year, month, day):
     return _bs_to_ad(year, month, day)
 
 
-def convert_AD_TO_BS(year, month, day):
+def convert_AD_to_BS(year, month, day):
     """
     Converts AD date to BS date
     :param year: integer AD year
