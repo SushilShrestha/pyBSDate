@@ -22,7 +22,7 @@ def _bs_to_ad(year, month, day):
 
 def _ad_to_bs(year, month, day):
     approx_bs_year = year + 57
-    bs_year_data = DATE_MAP.get(str(year))
+    bs_year_data = DATE_MAP.get(str(approx_bs_year))
     if not bs_year_data:
         raise LookupError("BS date out of conversion range")
 
@@ -44,5 +44,3 @@ def _ad_to_bs(year, month, day):
         bs_date.reduce_delta(days_diff*-1)
 
     return bs_date.year, bs_date.month, bs_date.day
-
-# print _ad_to_bs(2021, 7, 15)
