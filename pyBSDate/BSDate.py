@@ -1,6 +1,6 @@
 __author__ = 'sushil'
-from utilities import decompose_date
-from DateConverter import _bs_to_ad, _ad_to_bs
+from .utilities import decompose_date
+from .DateConverter import _bs_to_ad, _ad_to_bs
 
 def convert_to_ad(bs_date):
     date_components = decompose_date(bs_date)

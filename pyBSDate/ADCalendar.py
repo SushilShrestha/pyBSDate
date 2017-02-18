@@ -1,6 +1,6 @@
 __author__ = 'sushil'
 
-from BaseCalendar import BaseCalendar
+from .BaseCalendar import BaseCalendar
 
 class ADCalendar(BaseCalendar):
     def __init__(self, year_, month_, day_):

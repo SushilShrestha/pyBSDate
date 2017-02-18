@@ -1,9 +1,9 @@
-from ADCalendar import ADCalendar
-from BSCalendar import BSCalendar
+from .ADCalendar import ADCalendar
+from .BSCalendar import BSCalendar
 
 __author__ = 'sushil'
 
-from DateMap import DATE_MAP
+from .DateMap import DATE_MAP
 
 def _bs_to_ad(year, month, day):
     bs_year_data = DATE_MAP.get(str(year))

@@ -1,6 +1,6 @@
 __author__ = 'sushil'
 
-from DateConverter import _ad_to_bs, _bs_to_ad
+from .DateConverter import _ad_to_bs, _bs_to_ad
 
 def convert_BS_to_AD(year, month, day):
     """

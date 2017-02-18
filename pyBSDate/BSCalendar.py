@@ -1,7 +1,7 @@
 __author__ = 'sushil'
 
-from BaseCalendar import BaseCalendar
-from DateMap import DATE_MAP
+from .BaseCalendar import BaseCalendar
+from .DateMap import DATE_MAP
 
 class BSCalendar(BaseCalendar):
     def __init__(self, year_, month_, day_):
