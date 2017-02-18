@@ -1,6 +1,7 @@
 __author__ = 'sushil'
 
 import operator
+from functools import reduce
 
 
 class BaseCalendar(object):
