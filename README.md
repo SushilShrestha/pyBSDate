@@ -1,7 +1,7 @@
 # pyBSDate
 Python implementation of Date conversion From Bikram Sambat(BS) to English Date(AD) and viceversa.
 Conversion is done with the help of date mappings so conversion limited to certain range of date.
-#### Tested with python 2.7 and should also be good with python 3
+#### Tested with python 2.7 and should be ok with python 3
 
 ###Installation Instruction
 1. Get a copy of the project. Download zip of the project or ```git clone https://github.com/SushilShrestha/pyBSDate``` 
@@ -9,6 +9,11 @@ Conversion is done with the help of date mappings so conversion limited to certa
 ```python setup.py install```
 3. Validate from your python console.
 ```import pyBSDate```
+
+OR 
+
+If you have pip installed, simply
+```pip install pyBSDate```
 
 ###Usage
 ```python
