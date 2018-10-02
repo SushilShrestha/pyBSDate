@@ -4,7 +4,7 @@ Conversion is done with the help of date mappings so conversion limited to certa
 #### Tested with python 2.7 and should be ok with python 3
 
 ### Installation Instruction
-1. Get a copy of the project. Download zip of the project or clone the repo
+1. Get a copy of the project. Download zip of the project or clone this repo:
 ```
 git clone https://github.com/SushilShrestha/pyBSDate
 ``` 
