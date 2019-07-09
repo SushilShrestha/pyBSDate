@@ -9,7 +9,6 @@ The conversion is done with the help of date mappings, so the conversion is limi
 ```
 git clone https://github.com/SushilShrestha/pyBSDate
 ``` 
->>>>>>> 1dfcf3bf85752bca3e1a0af91df7f778c87feedb
 2. Open your terminal, navigate to the project folder and type
 ```
 python setup.py install
@@ -25,7 +24,6 @@ If you have pip installed, simply
 ```
 pip install pyBSDate
 ```
->>>>>>> 1dfcf3bf85752bca3e1a0af91df7f778c87feedb
 
 ### Usage
 
