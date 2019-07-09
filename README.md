@@ -4,18 +4,31 @@ The conversion is done with the help of date mappings, so the conversion is limi
 #### Tested with python 2.7 and should be ok with python 3
 
 ### Installation Instruction
-1. Get a copy of the project. Download zip of the project or clone this repo: ```git clone https://github.com/SushilShrestha/pyBSDate``` 
+
+1. Get a copy of the project. Download zip of the project or clone this repo:
+```
+git clone https://github.com/SushilShrestha/pyBSDate
+``` 
+>>>>>>> 1dfcf3bf85752bca3e1a0af91df7f778c87feedb
 2. Open your terminal, navigate to the project folder and type
-```python setup.py install```
+```
+python setup.py install
+```
 3. Validate from your python console.
-```import pyBSDate```
+```
+import pyBSDate
+```
 
 OR 
 
-If you have pip installed, simply run the following command in your terminal:
-```pip install pyBSDate```
+If you have pip installed, simply
+```
+pip install pyBSDate
+```
+>>>>>>> 1dfcf3bf85752bca3e1a0af91df7f778c87feedb
 
 ### Usage
+
 ```python
 # Convert BS Date to AD
 from pyBSDate import convert_BS_to_AD
