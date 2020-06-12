@@ -1,6 +1,8 @@
 # pyBSDate
-A python implementation for the date conversion from Nepali Date: Bikram Sambat(BS) to English Date(AD) and viceversa.
+
+A python implementation for the date conversion from Nepali Date: Bikram Sambat(BS) to English Date(AD) and vice-versa.
 The conversion is done with the help of date mappings, so the conversion is limited only to a certain date range.
+
 #### Tested with python 2.7 and should be ok with python 3
 
 ### Installation Instruction
