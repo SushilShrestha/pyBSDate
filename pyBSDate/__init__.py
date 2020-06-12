@@ -1,6 +1,7 @@
 __author__ = 'sushil'
 
 from .DateConverter import _ad_to_bs, _bs_to_ad
+from .BSDate import bsdate
 
 def convert_BS_to_AD(year, month, day):
     """
@@ -22,3 +23,4 @@ def convert_AD_to_BS(year, month, day):
     :return: (BS year, month, day)
     """
     return _ad_to_bs(year, month, day)
+
