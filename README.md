@@ -1,5 +1,5 @@
 # pyBSDate
-Python implementation of Date conversion From Bikram Sambat(BS) to English Date(AD) and viceversa.
+Python implementation of Date conversion From Bikram Sambat(BS) to English Date(AD) and vice-versa.
 Conversion is done with the help of date mappings so conversion limited to certain range of date.
 #### Tested with python 2.7 and should be ok with python 3
 
