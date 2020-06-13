@@ -55,5 +55,8 @@ class bsdate(nepalidate):
                 fmt = fmt.replace(key, format_functions[key](self, lang))
         return fmt
     
-    def ctime(self):
-        return self.strftime("%a %b %d 00:00:00 %Y")
+    def ctime(self, lang='en'):
+        return self.strftime(u"%a %b %d 00:00:00 %Y", lang)
+
+    def isoformat(self, lang='en'):
+        return self.strftime(u"%Y-%m-%d", lang)

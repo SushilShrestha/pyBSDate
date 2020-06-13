@@ -16,6 +16,7 @@ class Test_bsdate(unittest.TestCase):
         b = bsdate(2077, 2, 31)
         self.assertEqual(b.ctime(), 'Sat Jes 31 00:00:00 2077')
         self.assertEqual(bsdate(2065, 12, 30).ctime(), 'Sun Chai 30 00:00:00 2065')
+        self.assertEqual(bsdate(2065, 12, 30).ctime(lang='ne'), u'आइत चै ३० 00:00:00 २०६५')
 
     def test_strftime(self):
         b = bsdate(2089, 5, 30)
@@ -29,4 +30,9 @@ class Test_bsdate(unittest.TestCase):
             "%a %A %w %d %b %B-%m-%y:%Y %H:%I %p %M:%S.%f %X %%%%", lang='ne'),
             u'बिहि बिहिबार ३ ३० भा भाद्र-०५-८९:२०८९ 00:00 AM 00:00.000000 00:00:00 %%'
         )
+
+    def test_isoformat(self):
+        b = bsdate(2098, 8, 1)
+        self.assertEqual(b.isoformat(), '2098-08-01')
+        self.assertEqual(b.isoformat('ne'), u'२०९८-०८-०१')
 
