@@ -1,7 +1,7 @@
 __author__ = 'sushil'
 
 import datetime
-from .utilities import decompose_date
+from .utilities import decompose_date, format_functions
 from .DateConverter import _bs_to_ad, _ad_to_bs
 
 
@@ -37,7 +37,6 @@ class bsdate(nepalidate):
         self.bs_year, self.bs_month, self.bs_day = year, month, day
         super(bsdate, self).__init__(self.year, self.month, self.day)
 
-    # getters
     @property
     def year(self):
         return self.bs_year
@@ -49,3 +48,12 @@ class bsdate(nepalidate):
     @property
     def day(self):
         return self.bs_day
+
+    def strftime(self, fmt, lang='en'):
+        for key in format_functions:
+            if key in fmt:
+                fmt = fmt.replace(key, format_functions[key](self, lang))
+        return fmt
+    
+    def ctime(self):
+        return self.strftime("%a %b %d 00:00:00 %Y")
