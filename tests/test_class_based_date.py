@@ -36,3 +36,10 @@ class Test_bsdate(unittest.TestCase):
         self.assertEqual(b.isoformat(), '2098-08-01')
         self.assertEqual(b.isoformat('ne'), u'२०९८-०८-०१')
 
+    def test_replace(self):
+        b = bsdate(2077, 2, 12)
+        b.replace()
+        self.assertEqual(b.ctime(), 'Mon Jes 12 00:00:00 2077')
+        b = b.replace(year=2079)
+        self.assertEqual(b.ctime(), bsdate(2079, 2, 12).ctime())
+

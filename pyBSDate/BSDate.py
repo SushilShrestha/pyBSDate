@@ -60,3 +60,18 @@ class bsdate(nepalidate):
 
     def isoformat(self, lang='en'):
         return self.strftime(u"%Y-%m-%d", lang)
+
+    def timetuple(self):
+        raise NotImplementedError
+
+    def toordinal(self):
+        raise NotImplementedError
+
+    def replace(self, year=None, month=None, day=None):
+        self.bs_year = year or self.bs_year
+        self.bs_month = month or self.bs_month
+        self.bs_day = day or self.bs_day
+
+        return bsdate(self.bs_year, self.bs_month, self.bs_day)
+        
+        
