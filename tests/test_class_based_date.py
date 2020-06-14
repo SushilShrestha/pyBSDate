@@ -1,4 +1,6 @@
 # encoding=utf-8
+import datetime
+
 from pyBSDate import bsdate
 
 __author__ = 'sushil'
@@ -38,8 +40,24 @@ class Test_bsdate(unittest.TestCase):
 
     def test_replace(self):
         b = bsdate(2077, 2, 12)
-        b.replace()
+        b = b.replace()
         self.assertEqual(b.ctime(), 'Mon Jes 12 00:00:00 2077')
         b = b.replace(year=2079)
         self.assertEqual(b.ctime(), bsdate(2079, 2, 12).ctime())
+
+    def test_less_than_equals(self):
+        b = bsdate(2077, 2, 12) # 2020-05-25
+        self.assertEqual(b < datetime.date(2020, 5, 25), False)
+        self.assertEqual(b <= datetime.date(2020, 5, 25), True)
+
+        c = bsdate(2077, 1, 1)
+        self.assertEqual(c < b, True)
+        self.assertEqual(c <= b, True)
+
+    def test_greater_than_equals(self):
+        b = bsdate(2077, 2, 12)  # 2020-05-25
+        self.assertEqual(b > datetime.date(2020, 5, 25), False)
+        self.assertEqual(b >= datetime.date(2020, 5, 25), True)
+        self.assertEqual(b > datetime.date(2019, 5, 25), True)
+
 
