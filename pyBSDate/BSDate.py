@@ -74,4 +74,22 @@ class bsdate(nepalidate):
 
         return bsdate(self.bs_year, self.bs_month, self.bs_day)
         
-        
+    @classmethod
+    def today(cls):
+        todays_date = datetime.date.today()
+        return cls.fromdateobj(todays_date)
+
+    @classmethod
+    def fromtimestamp(cls, t):
+        timestamp_date = super(bsdate, cls).fromtimestamp(t)
+        return cls.fromdateobj(timestamp_date)
+
+    @classmethod
+    def fromordinal(cls, n):
+        ordinal_date = super(bsdate, cls).fromordinal(n)
+        return cls.fromdateobj(ordinal_date)
+
+    @classmethod
+    def fromdateobj(cls, d):
+        bs_year, bs_month, bs_day = _ad_to_bs(d.year, d.month, d.day)
+        return bsdate(bs_year, bs_month, bs_day)

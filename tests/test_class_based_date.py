@@ -1,7 +1,7 @@
 # encoding=utf-8
 import datetime
 
-from pyBSDate import bsdate
+from pyBSDate import bsdate, _ad_to_bs
 
 __author__ = 'sushil'
 import unittest
@@ -60,4 +60,17 @@ class Test_bsdate(unittest.TestCase):
         self.assertEqual(b >= datetime.date(2020, 5, 25), True)
         self.assertEqual(b > datetime.date(2019, 5, 25), True)
 
+    def test_today(self):
+        b = bsdate.today()
+        a = datetime.date.today()
+        bs_year, bs_month, bs_day = _ad_to_bs(a.year, a.month, a.day)
+        self.assertEqual(b, bsdate(bs_year, bs_month, bs_day))
 
+    def test_timestamp(self):
+        b = bsdate.fromtimestamp(1592097802)
+        self.assertEqual(b, bsdate(2077, 2, 31))
+
+    def test_fromdateobj(self):
+        test = datetime.date(2012, 2, 29)
+        b = bsdate.fromdateobj(test)
+        self.assertEqual(b, bsdate(2068, 11, 17))
