@@ -1,7 +1,7 @@
 __author__ = 'sushil'
 
 from .DateConverter import _ad_to_bs, _bs_to_ad
-from .BSDate import bsdate, addate
+from .wrappers import bsdate, addate
 
 def convert_BS_to_AD(year, month, day):
     """
