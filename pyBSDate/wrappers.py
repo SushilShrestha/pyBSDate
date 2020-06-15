@@ -11,7 +11,6 @@ class bsdate(datetime.date):
 
     def __init__(self, year, month, day):
         self.bs_year, self.bs_month, self.bs_day = year, month, day
-        super(bsdate, self).__init__(self.year, self.month, self.day)
 
     @property
     def year(self):
@@ -79,7 +78,7 @@ class bsdate(datetime.date):
 class addate(datetime.date):
     def __init__(self, year, month, day):
         self.bs_year, self.bs_month, self.bs_day = _ad_to_bs(year, month, day)
-        super(addate, self).__init__(year, month, day)
+
 
     @property
     def bsdate(self):

@@ -23,7 +23,6 @@ class TestBSCalendar(unittest.TestCase):
         count_ = BSCalendar(2072, 12, 10).count_year_days()
         self.assertEqual(count_, 345)
 
-        print "hello"
         count_ = BSCalendar(2072, 11, 1).count_year_days()
         self.assertEqual(count_, 306)
 

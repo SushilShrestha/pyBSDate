@@ -86,7 +86,7 @@ class Test_addate(unittest.TestCase):
         a = addate(2020, 6, 14)
         self.assertEqual(a.ctime(), 'Sun Jun 14 00:00:00 2020')
 
-    def test_addate(self):
+    def test_convert(self):
         a = addate(2020, 6, 14)
         b = a.bsdate
         self.assertEqual(b.ctime(), 'Sun Jes 32 00:00:00 2077')
