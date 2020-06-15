@@ -1,5 +1,3 @@
-__author__ = 'sushil'
-
 from .BaseCalendar import BaseCalendar
 from .DateMap import DATE_MAP
 

@@ -1,7 +1,6 @@
-from pyBSDate.DateConverter import _bs_to_ad, _ad_to_bs
-
-__author__ = 'sushil'
 import unittest
+
+from pyBSDate.DateConverter import _bs_to_ad, _ad_to_bs
 
 
 class TestDateConversion(unittest.TestCase):

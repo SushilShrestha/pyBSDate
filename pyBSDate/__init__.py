@@ -1,5 +1,3 @@
-__author__ = 'sushil'
-
 from .DateConverter import _ad_to_bs, _bs_to_ad
 from .wrappers import bsdate, addate
 

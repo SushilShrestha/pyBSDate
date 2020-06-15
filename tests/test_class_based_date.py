@@ -1,10 +1,8 @@
 # encoding=utf-8
 import datetime
+import unittest
 
 from pyBSDate import bsdate, _ad_to_bs, addate
-
-__author__ = 'sushil'
-import unittest
 
 
 class Test_bsdate(unittest.TestCase):

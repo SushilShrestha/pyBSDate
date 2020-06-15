@@ -1,7 +1,6 @@
-from pyBSDate.BSCalendar import BSCalendar
-
-__author__ = 'sushil'
 import unittest
+
+from pyBSDate.BSCalendar import BSCalendar
 
 
 class TestBSCalendar(unittest.TestCase):

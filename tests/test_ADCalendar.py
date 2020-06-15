@@ -1,7 +1,6 @@
-from pyBSDate.ADCalendar import ADCalendar
-
-__author__ = 'sushil'
 import unittest
+
+from pyBSDate.ADCalendar import ADCalendar
 
 
 class TestADCalendar(unittest.TestCase):

@@ -1,4 +1,3 @@
-__author__ = 'sushil'
 import unittest
 
 from pyBSDate import BSDate, utilities

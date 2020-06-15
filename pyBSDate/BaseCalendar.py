@@ -1,5 +1,3 @@
-__author__ = 'sushil'
-
 import operator
 from functools import reduce
 
