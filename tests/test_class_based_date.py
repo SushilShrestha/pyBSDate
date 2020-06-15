@@ -1,7 +1,7 @@
 # encoding=utf-8
 import datetime
 
-from pyBSDate import bsdate, _ad_to_bs
+from pyBSDate import bsdate, _ad_to_bs, addate
 
 __author__ = 'sushil'
 import unittest
@@ -74,3 +74,22 @@ class Test_bsdate(unittest.TestCase):
         test = datetime.date(2012, 2, 29)
         b = bsdate.fromdateobj(test)
         self.assertEqual(b, bsdate(2068, 11, 17))
+
+    def test_addate(self):
+        b = bsdate(2077, 2, 15)  # 2020-05-28
+        a = b.addate
+        c = a.bsdate
+        self.assertEqual(b, c)
+        self.assertEqual(a, datetime.date(2020, 5, 28))
+
+
+class Test_addate(unittest.TestCase):
+    def test_addate(self):
+        a = addate(2020, 6, 14)
+        self.assertEqual(a.ctime(), 'Sun Jun 14 00:00:00 2020')
+
+    def test_addate(self):
+        a = addate(2020, 6, 14)
+        b = a.bsdate
+        self.assertEqual(b.ctime(), 'Sun Jes 32 00:00:00 2077')
+        self.assertEqual(b.ctime('ne'), u'आइत जेष् ३२ 00:00:00 २०७७')

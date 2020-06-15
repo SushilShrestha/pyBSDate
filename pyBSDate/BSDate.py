@@ -23,15 +23,10 @@ def convert_to_bs(ad_date):
     return formatted_date
 
 
-class nepalidate(datetime.date):
-    def __init__(self, year, month, day):
-        super(nepalidate, self).__init__(year, month, day)
-
-
-class bsdate(nepalidate):
+class bsdate(datetime.date):
     def __new__(cls, year, month, day):
         ad_year, ad_month, ad_day = _bs_to_ad(year, month, day)
-        return nepalidate.__new__(cls, ad_year, ad_month, ad_day)
+        return datetime.date.__new__(cls, ad_year, ad_month, ad_day)
 
     def __init__(self, year, month, day):
         self.bs_year, self.bs_month, self.bs_day = year, month, day
@@ -48,6 +43,11 @@ class bsdate(nepalidate):
     @property
     def day(self):
         return self.bs_day
+
+    @property
+    def addate(self):
+        ad_year, ad_month, ad_day = _bs_to_ad(self.year, self.month, self.day)
+        return addate(ad_year, ad_month, ad_day)
 
     def strftime(self, fmt, lang='en'):
         for key in format_functions:
@@ -93,3 +93,14 @@ class bsdate(nepalidate):
     def fromdateobj(cls, d):
         bs_year, bs_month, bs_day = _ad_to_bs(d.year, d.month, d.day)
         return bsdate(bs_year, bs_month, bs_day)
+
+
+class addate(datetime.date):
+    def __init__(self, year, month, day):
+        self.bs_year, self.bs_month, self.bs_day = _ad_to_bs(year, month, day)
+        super(addate, self).__init__(year, month, day)
+
+    @property
+    def bsdate(self):
+        return bsdate(self.bs_year, self.bs_month, self.bs_day)
+
