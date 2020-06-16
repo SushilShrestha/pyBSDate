@@ -91,3 +91,10 @@ class Test_addate(unittest.TestCase):
         b = a.bsdate
         self.assertEqual(b.ctime(), 'Sun Jes 32 00:00:00 2077')
         self.assertEqual(b.ctime('ne'), u'आइत जेष् ३२ 00:00:00 २०७७')
+
+    def test_001(self):
+        ne_date = bsdate(2077, 2, 32)
+        # self.assertEqual(ne_date.strftime("%B %d %Y, %A", lang='ne'), '')
+        en_date = ne_date.addate
+        print(en_date.strftime("%B %d %Y, %A"))
+        self.assertEqual(en_date.strftime("%B %d %Y, %A"), '')

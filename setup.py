@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='pyBSDate',
-    version='0.3.0rc',
+    version='0.3.0rc1',
     packages=['pyBSDate'],
     url='https://github.com/SushilShrestha/pyBSDate',
     download_url='https://github.com/SushilShrestha/pyBSDate/tarball/0.3.0rc',
@@ -16,4 +16,10 @@ setuptools.setup(
     description='Python BS date conversion utility',
     long_description=long_description,
     long_description_content_type="text/markdown",
+    classifiers=[
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.7',
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Utilities",
+    ]
 )
