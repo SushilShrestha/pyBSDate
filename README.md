@@ -7,6 +7,9 @@
 [![GitHub license](https://img.shields.io/github/license/SushilShrestha/pyBSDate)](https://github.com/SushilShrestha/pyBSDate/blob/master/License)
 
 
+<img src="http://admin.shresthasushil.com.np/static/nepalidate/today.gif" width=300/>
+
+
 Python implementation of Date conversion From Bikram Sambat(BS) to English Date(AD) and viceversa.
 Conversion is done with the help of date mappings so conversion limited to 1971-2100 BS.
 
