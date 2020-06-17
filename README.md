@@ -22,6 +22,7 @@ pip install pyBSDate
 ```
 
 OR from source:
+
 1. Get a copy of the project. Download zip of the project or clone this repo:
 ```
 git clone https://github.com/SushilShrestha/pyBSDate
