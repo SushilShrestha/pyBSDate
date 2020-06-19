@@ -86,7 +86,7 @@ python -m unittest discover
 ```
 
 ## Release History
-* 0.3.0rc
+* 0.3.0
     * add class based wrapper for date conversion
     * update documentations
 * 0.2.*
