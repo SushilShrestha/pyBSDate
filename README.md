@@ -11,7 +11,7 @@
 
 
 Python implementation of Date conversion From Bikram Sambat(BS) to English Date(AD) and viceversa.
-Conversion is done with the help of date mappings so conversion limited to 1971-2100 BS.
+Conversion is done with the help of date mappings. So, conversion limited to 1971-2100 BS.
 
 
 ## Installation
@@ -36,7 +36,7 @@ python setup.py install
 ## Usage
 #### Using functions
 ```python
-# Convert BS Date to AD
+# Convert BS Date to AD Date
 from pyBSDate import convert_BS_to_AD
 ad_date = convert_BS_to_AD(2072, 1, 10)
 print(ad_date)
@@ -50,7 +50,7 @@ print(bs_date)
 #### Class based wrappers
 `bsdate` and `addate` classes are available for the date conversion. They inherit from the parent `datetime.date` class and all the functions are similar to `datetime.date` class. 
 
-Following is the example of using the class based date.
+Following code is the example of using the class based date.
 ```python
 from pyBSDate import bsdate
 
@@ -73,7 +73,7 @@ if ne_date > en_date:
     print(ne_date.isoformat(lang='ne'))
 ```
 
-Addition or substraction of `timedelta` is supported 
+Addition or substraction of `timedelta` is also supported 
 ```python
 ne_date = ne_date + datetime.timedelta(days=2)
 ```
