@@ -97,4 +97,4 @@ class Test_addate(unittest.TestCase):
         # self.assertEqual(ne_date.strftime("%B %d %Y, %A", lang='ne'), '')
         en_date = ne_date.addate
         print(en_date.strftime("%B %d %Y, %A"))
-        self.assertEqual(en_date.strftime("%B %d %Y, %A"), '')
+        self.assertEqual(en_date.strftime("%B %d %Y, %A"), 'June 14 2020, Sunday')
