@@ -1,4 +1,5 @@
 import datetime
+import time
 
 from .utilities import format_functions
 from .DateConverter import _bs_to_ad, _ad_to_bs
@@ -42,10 +43,11 @@ class bsdate(datetime.date):
         return self.strftime(u"%Y-%m-%d", lang)
 
     def timetuple(self):
-        raise NotImplementedError
+        yday = self.toordinal() - datetime.date(self.year, 1, 1).toordinal() + 1
+        return time.struct_time((self.year, self.month, self.day, 0, 0, 0, self.weekday(), yday, -1))
 
     def toordinal(self):
-        raise NotImplementedError
+        return datetime.date(self.bs_year, self.bs_month, self.bs_day).toordinal()
 
     def replace(self, year=None, month=None, day=None):
         self.bs_year = year or self.bs_year
@@ -74,11 +76,13 @@ class bsdate(datetime.date):
         bs_year, bs_month, bs_day = _ad_to_bs(d.year, d.month, d.day)
         return bsdate(bs_year, bs_month, bs_day)
 
+    def __repr__(self):
+        return "bsdate(%d, %d, %d)" % (self.bs_year, self.bs_month, self.bs_day)
+
 
 class addate(datetime.date):
     def __init__(self, year, month, day):
         self.bs_year, self.bs_month, self.bs_day = _ad_to_bs(year, month, day)
-
 
     @property
     def bsdate(self):
