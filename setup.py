@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='pyBSDate',
-    version='0.3.1',
+    version='0.3.2',
     packages=['pyBSDate'],
     url='https://github.com/SushilShrestha/pyBSDate',
-    download_url='https://github.com/SushilShrestha/pyBSDate/tarball/0.3.1',
+    download_url='https://github.com/SushilShrestha/pyBSDate/tarball/0.3.2',
     license='MIT',
     author='sushil',
     author_email='afahocci@gmail.com',
